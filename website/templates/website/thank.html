@@ -1,0 +1,22 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+  <!DOCTYPE html>
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <title>Thank You </title>
+    </head>
+    <body>
+      <br>
+      <div class="container">
+        <div class="alert alert-success text-center">
+          <img src="{% static 'website/images/thank.gif' %}" width="150">
+          <hr>
+          <h4><strong>Thanks You, {{ name }}</strong> We Will Contact Soon as posible</h4>
+        </div>
+      </div>
+      {% include 'website/footer.html' %}
+    </body>
+  </html>
+{% endblock %}

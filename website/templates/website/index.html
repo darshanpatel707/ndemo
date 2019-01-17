@@ -1,0 +1,27 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+  <!DOCTYPE html>
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <title>New Balaji Tours And Travels</title>
+    </head>
+    <style media="screen">
+      .hotdeal {
+        background-color: red;
+      }
+      .packages-design {
+        width:350px;
+        display:inline-block;
+        float:left;
+      }
+    </style>
+    <body>
+      {%  include 'website/slider.html' %}
+      {% include 'website/visainquiry.html' %}
+      {% include 'website/hotdeal.html' %}
+      {% include 'website/footer.html' %}
+    </body>
+  </html>
+{% endblock %}

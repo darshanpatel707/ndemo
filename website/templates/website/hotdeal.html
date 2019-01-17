@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <style media="screen">
+    .card {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    #heart-left {
+      margin-right: 10px;
+      color: #258;
+    }
+    #heart-right {
+      margin-left: 10px;
+      color: #258;
+    }
+    .bordernow {
+      margin: auto;
+      border:2px solid #258;
+      padding: 1px;
+      width: 100px;
+    }
+  </style>
+  <body>
+    <div class="head-hot text-center">
+      <br>
+      <h3><i class="far fa-heart" id="heart-left"></i> Hot Deals <i class="far fa-heart" id="heart-right"></i></h3>
+      <div class="bordernow">
+      </div>
+      <br>
+    </div>
+    {% for package in hotdeal %}
+      <section>
+        <div class="container">
+          <div class="packages-design">
+            <div class="card">
+              <div class="img-package">
+                <img class="card-img-top" src="{{package.package_image.url}}" alt="">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">{{package.package_name}}</h5>
+                <p class="card-text"><i class="fas fa-cloud-sun"></i> <small>{{ package.package_day }} Days</small> <i class="fas fa-cloud-moon"></i> <small>{{ package.package_night }} Nights</small></p>
+                <p class="card-text">&#x20b9; Price : {{package.package_price}}</p>
+                <a href="#" class="btn btn-primary">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    {% endfor %}
+    <div class="clearfix">
+
+    </div>
+  </body>
+</html>

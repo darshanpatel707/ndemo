@@ -1,0 +1,53 @@
+{% extends 'website/base.html' %}
+{% block content %}
+  <!DOCTYPE html>
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <title>Contact - New Balaji Tours And Travels</title>
+      <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    </head>
+    <style media="screen">
+      body {
+        font-family: 'Varela Round', sans-serif;
+      }
+      .bg-deep {
+        background-color: deepskyblue;
+        color: #fff;
+      }
+      .head hr {
+        border: 1px solid black;
+      }
+    </style>
+    <body>
+      <div class="container">
+        <div class="head text-center bg-deep">
+          <hr>
+          <h2 class="">Contact Us</h2>
+          <hr>
+        </div>
+        <form class="col-md-6" action="{% url 'contact'%}" method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="">Name :</label>
+            <input type="text" name="name" placeholder="Enter Your Name">
+          </div>
+          <div class="form-group">
+            <label for="">Email :</label>
+            <input type="email" name="email" placeholder="someone@example.com">
+          </div>
+          <div class="form-group">
+            <label for="">Mobile :</label>
+            <input type="tel" name="mobile" placeholder="Enter Your Number">
+          </div>
+          <div class="from-group">
+            <p>What are you looking for :</p>
+            <textarea name="message" rows="5" cols="50"></textarea>
+          </div>
+          <input type="submit" name="" class="btn btn-primary" value="Send">
+        </form>
+      </div>
+      {% include 'website/footer.html' %}
+    </body>
+  </html>
+{% endblock %}

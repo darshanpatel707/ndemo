@@ -1,0 +1,71 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>International Tours</title>
+  </head>
+  <style media="screen">
+  body {
+    background-color: ;
+  }
+    .packages-design {
+      background-color: #5887;
+      display: inline-block;
+      float: left;
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    .packages-design .card {
+    }
+    .col-sm-5 {
+      padding-top: 60px;
+    }
+    .img-package {
+      width: 320px;
+    }
+    .img-package img {
+      width: 100%;
+    }
+    .head-domestic {
+      background-color: #578;
+      color: white;
+    }
+    #downlaod {
+      float:right;
+    }
+  </style>
+  <body>
+    <div class="head-domestic text-center">
+      <hr>
+      <h2>International Tours</h2>
+      <hr>
+    </div>
+    {% for package in international %}
+      <section>
+        <div class="container">
+          <form class="" action="{% url 'ipackage' %}" method="post">
+            {% csrf_token %}
+            <div class="packages-design">
+              <div class="card">
+                <div class="img-package">
+                  <img class="card-img-top" src="{{package.package_image.url}}" alt="">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{package.package_name}}</h5>
+                  <p class="card-text"><i class="fas fa-cloud-sun"></i> <small>{{ package.package_day }} Days</small> <i class="fas fa-cloud-moon"></i> <small>{{ package.package_night }} Nights</small></p>
+                  <p class="card-text">&#x20b9; Price : {{package.package_price}}</p>
+                  <input type="submit" name="" class="btn btn-primary" value="View Details">
+                  <input type="hidden" name="packageid" value="{{package.id}}">
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    {% endfor %}
+  </body>
+</html>
+{% endblock %}

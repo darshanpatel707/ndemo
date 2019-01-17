@@ -1,0 +1,64 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+  <!DOCTYPE html>
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <title>Booking - New Balaji Tours And Travels</title>
+      <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    </head>
+    <style media="screen">
+    body {
+      font-family: 'Varela Round', sans-serif;
+    }
+      .col-sm-4 {
+        padding: 10px;
+      }
+      .bg-deep {
+        background-color: deepskyblue;
+        color:#fff;
+      }
+      .bg-deep hr {
+        border:1px solid black;
+      }
+    </style>
+    <body>
+      <div class="container">
+        <div class="head text-center bg-deep">
+          <hr>
+          <h2>Booking Inquiry</h2>
+          <hr>
+        </div>
+      </div>
+      <div class="container bg-light">
+        <div class="row">
+          <div class="col-sm-4 bg-light text-center">
+            <img src="{% static 'website/images/plane.svg' %}" alt="" width="120">
+            <hr>
+            <h3>Flight Booking</h3>
+            <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a  href="{% url 'flight' %}" class="btn btn-primary" name="button">Inquiry</a>
+          </div>
+          <!-- hotel -->
+          <div class="col-sm-4 bg-light text-center">
+            <img src="{% static 'website/images/hotel.svg' %}" alt="" width="120">
+            <hr>
+            <h3>Hotel Booking</h3>
+            <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="{% url 'hotel' %}" class="btn btn-primary" name="button">Inquiry</a>
+          </div>
+          <!-- train -->
+          <div class="col-sm-4 bg-light text-center">
+            <img src="{% static 'website/images/train.svg' %}" alt="" width="120">
+            <hr>
+            <h3>Train Booking</h3>
+            <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="{% url 'train' %}" class="btn btn-primary">Inquiry Now</a>
+          </div>
+        </div>
+      </div>
+      {% include 'website/footer.html' %}
+      {% endblock %}
+    </body>
+  </html>

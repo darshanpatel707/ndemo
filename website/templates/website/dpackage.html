@@ -1,0 +1,83 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+  </head>
+  <style media="screen">
+    .dpackage-image {
+      width:420px;
+      border: 5px solid black;
+      border-radius:15px;
+    }
+    .dpackage-image img {
+      width: 100%;
+      border-radius:10px;
+    }
+    .dpackage-context {
+      margin-top: 20px;
+    }
+    .col-sm-3 {
+      background-color: #5874;
+      margin-right: 20px;
+      padding: 10px;
+    }
+    .form-logo {
+      margin-bottom: 15px;
+      background:white;
+      padding:5px;
+    }
+    .col-sm-6 {
+
+      padding:10px;
+    }
+    .download-section a {
+      margin-left:10px;
+    }
+  </style>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <form class="frm" action="index.html" method="post">
+            <div class="form-logo">
+              <div class="text-center">
+                <img src="{% static 'website/images/logo.jpg' %}" width="140">
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Name" name="name">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="someone@example.com" name="email">
+            </div>
+            <div class="form-group">
+              <input type="tel" class="form-control" placeholder="Mobile Number" name="mobile">
+            </div>
+            <input type="submit" class="btn btn-primary" value="Book Now">
+          </form>
+        </div>
+        <div class="dpackage col-sm-6">
+          <div class="dpackage-image text-center">
+            <img src="{{image.url}}" alt="new balaji tours and travels {{title}}">
+          </div>
+          <div class="dpackage-context">
+            <h3>{{title}}</h3>
+            <p><i class="fas fa-cloud-sun"></i> <small>{{day}} Days</small> <i class="fas fa-cloud-moon"></i> <small>{{night}} Nights</small></p>
+            <h4>&#x20b9; Price : {{price}}</h4>
+          </div>
+          <div class="download-section">
+            <a href="{{itinerary.url}}" class="btn btn-primary">Tour Itinerary</a>
+            <a href="{{itinerary.url}}" class="btn btn-primary" download><i class="fas fa-download"></i> Download <small>[PDF]</small></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% include 'website/footer.html' %}
+  </body>
+</html>
+{% endblock %}

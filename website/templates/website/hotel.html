@@ -1,0 +1,90 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+  <!DOCTYPE html>
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <title>Hotel -  New Balaji Tours And Travels</title>
+    </head>
+    <style media="screen">
+      .bg-deep hr {
+        border:1px solid black;
+      }
+      .bg-deep {
+        background-color: deepskyblue;
+        color: white;
+      }
+      .flight  {
+        background-image: url("{% static 'website/images/hotelbg.jpeg' %}");
+        padding: 10px;
+      }
+      .hotel-form {
+        background-color: #7779;
+        padding:12px;
+        padding-right:0px;
+        color: white;
+      }
+    </style>
+    <body>
+      <div class="container">
+        <div class="head text-center bg-deep">
+          <hr>
+          <h2>Hotel Booking</h2>
+          <hr>
+        </div>
+      </div>
+      <section class="flight">
+        <div class="container">
+          <div class="col-sm-6">
+            <form class="hotel-form" action="{% url 'hotel'%}" method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                <label>Name :</label>
+                <input type="text" name="name" placeholder="Enter Your Name">
+              </div>
+              <div class="form-group">
+                <label>Email :</label>
+                <input type="email" name="email" placeholder="someone@example.com">
+              </div>
+              <div class="form-group">
+                <label>Mobile :</label>
+                <input type="tel" name="mobile" placeholder="Mobile Number">
+              </div>
+              <div class="form-group">
+                <label>Check-In Date :</label>
+                <input type="date" name="in-date" >
+              </div>
+              <div class="form-group">
+                <label>Check-Out Date :</label>
+                <input type="date" name="out-date">
+              </div>
+              <div class="form-group">
+                <label>City Name :</label>
+                <input type="text" name="city" placeholder="Enter City Name">
+              </div>
+              <div class="from-group">
+                <label>Adult :</label>
+                <select name="adult">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+                <label>Child :</label>
+                <select  name="child">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                </select>
+              </div><br>
+              <div class="form-group">
+                <input type="submit" name="" class="btn btn-primary" value="Inquiry Now">
+              </div>
+            </form>
+          </div>
+          </div>
+      </section>
+      {% include 'website/footer.html' %}
+    </body>
+  </html>
+{% endblock %}

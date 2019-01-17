@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Bootstrap CSS -->
+  </head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <style media="screen">
+    footer {
+      background-color: #333;
+      padding: 15px;
+      color: white;
+    }
+    .social-link img {
+      margin: 10px;
+    }
+
+    .copyright {
+      color: #7878;
+    }
+  </style>
+  <body>
+    <br>
+    <div class="clearfix">
+    <!-- footer clearfix for design package-design in css -->
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <h4><i class="far fa-building"></i> Head Office</h4>
+            <p><small>Shreenath Krupa Bldng,</small></p>
+            <p><small>Radhakrishna Madire Lane,</small></p>
+            <p><small>Navi Mumbai-400703</small></p>
+          </div>
+          <div class="col-sm-4">
+            <h4><i class="fas fa-users"></i> Contact Us</h4>
+            <p><small>Phone : +917600977785</small></p>
+            <p><small>Office : +916351080030</small></p>
+            <p><small>info@newbalajitoursandtravels.com</small></p>
+          </div>
+          <div class="col-sm-4 social">
+            <h4><i class="fas fa-globe-asia"></i> Social Links</h4>
+            <div class="social-link">
+              <img src="{% static 'website/images/facebook.png' %}" width="40" height="40" alt="">
+              <img src="{% static 'website/images/whatsapp.png' %}" width="40" height="40" alt="">
+              <img src="{% static 'website/images/youtube.png' %}" width="40" height="40" alt="">
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="copyright">
+          <p><i class="far fa-copyright"></i> All Right Served By New Balaji Tours And Travels</p>
+          <ul>
+            <li>Flight Booking</li>
+            <li>Hotel Booking</li>
+            <li>Train Booking</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

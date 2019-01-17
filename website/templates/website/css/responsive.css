@@ -1,0 +1,54 @@
+.top-bar .email-top {
+  width: 100%;
+  text-align: center;
+}
+section.frist .info-phone {
+  padding: 0px;
+  margin-top: 35px;
+  display: inline-block;
+}
+section.frist .logo img {
+  width: 120px;
+  display: inline-block;
+}
+
+/* pakages pages responsive code start here */
+.column {
+  float: none;
+  width: 100%;
+  display: none;
+}
+section.main .btn {
+  width: 100%;
+  margin-bottom: 10px;
+}
+/* tickets responsive */
+.plane {
+  width: 300px;
+}
+.left {
+  width: 100%;
+  display: inline-block;
+}
+.right {
+  width: 100%;
+  float: none;
+}
+.two-left {
+  width: 100%;
+  float: none;
+}
+.two-right {
+  width: 100%;
+  display: inline-block;
+}
+section.last .map {
+  display: none;
+  margin-top: 10px;
+}
+.video {
+  width: 250px;
+}
+#video {
+  width: 100%;
+}

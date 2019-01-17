@@ -1,0 +1,72 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tracking - New Balaji Tours And Travels</title>
+  </head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <style media="screen">
+  body {
+    background-color: ;
+  }
+    .packages-design {
+      background-color: #5887;
+      display: inline-block;
+      float: left;
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    .packages-design .card {
+    }
+    .col-sm-5 {
+      padding-top: 60px;
+    }
+    .img-package {
+      width: 320px;
+    }
+    .img-package img {
+      width: 100%;
+    }
+    .head-domestic {
+      background-color: #578;
+      color: white;
+    }
+    #download {
+      float:right;
+    }
+  </style>
+  <body>
+    <div class="head-domestic text-center">
+      <hr>
+      <h2>Tracking</h2>
+      <hr>
+    </div>
+    {% for package in tracking %}
+      <section>
+        <div class="container">
+          <form class="" action="{% url 'tpackage' %}" method="post">
+            {% csrf_token %}
+            <div class="packages-design">
+              <div class="card">
+                <div class="img-package">
+                  <img class="card-img-top" src="{{package.package_image.url}}" alt="">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{package.package_name}}</h5>
+                  <p class="card-text"><i class="fas fa-cloud-sun"></i> <small>{{ package.package_day }} Days</small> <i class="fas fa-cloud-moon"></i> <small>{{ package.package_night }} Nights</small></p>
+                  <p class="card-text">&#x20b9; Price : {{package.package_price}}</p>
+                  <input type="hidden" name="packageid" value="{{package.id}}">
+                  <input type="submit" class="btn btn-primary" value="View Details">
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    {% endfor %}
+  </body>
+</html>
+{% endblock %}

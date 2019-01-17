@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <style media="screen">
+    .visa {
+      padding:20px;
+      background-color: #2578;
+      color:white;
+    }
+    .visa-inquiry {
+      background: #eee;
+      padding:10px;
+      color:black;
+      border-radius: 15px;
+      margin-bottom:10px;
+    }
+    .visa-inquiry h5 {
+      margin-top: 10px;
+    }
+    .passport-inquiry h5 {
+      margin-top: 10px;
+    }
+    .passport-inquiry {
+      background:#eee;
+      padding:10px;
+      color:black;
+      border-radius:15px;
+    }
+  </style>
+  <body>
+    <div class="visa">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <h3 class="text-center">Visa Inquiry</h3>
+            <div class="bordernow"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="#" class="btn btn-primary">See More</a>
+          </div>
+          <div class="col-sm-6">
+            <div class="visa-inquiry text-center">
+              <img src="{% static 'website/images/passport(1).png' %}" width="80">
+              <h5>Student Visa</h5>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Inquiry Now!</button>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Student Visa Inquiry</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="text-left" action="{% url 'visainquiry' %}" method="post">
+                      {% csrf_token %}
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Name :</label>
+                        <input type="text" class="form-control" placeholder="Name" name="name">
+                      </div>
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Mobile :</label>
+                        <input type="tel" class="form-control" placeholder="Mobile Number" name="mobile">
+                      </div>
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Email :</label>
+                        <input type="email" class="form-control" placeholder="someone@example.com" name="email">
+                      </div>
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Course Interesting :</label>
+                        <input type="text" class="form-control" placeholder="Course Interesting" name="course">
+                      </div>
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Country :</label>
+                        <input type="text" class="form-control" placeholder="Country" name="country">
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary" value="Send Inquiry">
+                      </div>
+                    </form>
+                  </div>
+              </div>
+            </div>
+          </div>
+            </div>
+            <!-- passport inquiry -->
+            <div class="passport-inquiry text-center">
+              <img src="{% static 'website/images/passport.png' %}" width="80">
+              <h5>Passport Inquiry</h5>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter-passport">Inquiry Now!</button>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModalCenter-passport" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Passport Inquiry</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="text-left" action="{% url 'passportinquiry' %}" method="post">
+                      {% csrf_token %}
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Name :</label>
+                        <input type="text" class="form-control" placeholder="Name" name="name">
+                      </div>
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Mobile :</label>
+                        <input type="tel" class="form-control" placeholder="Mobile Number" name="mobile">
+                      </div>
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Email :</label>
+                        <input type="email" class="form-control" placeholder="someone@example.com" name="email">
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary" value="Send Inquiry">
+                      </div>
+                    </form>
+                  </div>
+              </div>
+            </div>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
