@@ -1,7 +1,5 @@
 import django_heroku
 import os
-import psycopg2
-conn = psycopg2.connect(database="testing", user="newbalaji", password="darshan", host="127.0.0.1", port="5432")
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -16,7 +14,7 @@ SECRET_KEY = 't@lplyj4a16msz1&9&-e4x526er+j-3x)6*qll672x#92+i5bu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -67,12 +65,8 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'testing',
-        'USER': 'newbalaji',
-        'PASSWORD': 'darshan',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
